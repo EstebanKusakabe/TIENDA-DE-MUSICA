@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuela de Música Nota Perfecta</title>
+    <!-- Tailwind CSS with dark mode enabled -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                600: "#7e22ce",
+                700: "#6b21a8",
+                800: "#581c87",
+              },
+              amber: {
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Font Awesome para redes sociales -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200"
+  >
+    <!-- Navbar -->
+    <nav class="bg-purple-600 dark:bg-purple-800 fixed w-full z-10 shadow">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/index.html" class="text-white text-2xl font-bold"
+          >Nota Perfecta</a
+        >
+        <ul class="flex space-x-6">
+          <li>
+            <a
+              href="/index.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/cursos.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Cursos</a
+            >
+          </li>
+          <li>
+            <a
+              href="/nosotros.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contacto.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="/inscripción.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inscripción</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Contacto -->
+    <section
+      id="contacto"
+      class="py-16 container mx-auto px-4 transition-colors"
+    >
+      <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
+      <div class="md:flex md:space-x-12">
+        <!-- Formulario -->
+        <form
+          class="md:flex-1 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg space-y-4 transition-colors"
+        >
+          <div>
+            <label class="block font-medium mb-1">Nombre</label>
+            <input
+              type="text"
+              class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              placeholder="Tu nombre"
+            />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Email</label>
+            <input
+              type="email"
+              class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              placeholder="Tu correo"
+            />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Mensaje</label>
+            <textarea
+              class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              rows="4"
+              placeholder="Escribe tu consulta..."
+            ></textarea>
+          </div>
+          <div>
+            <label class="block font-medium mb-1"
+              >Agendar prueba gratuita</label
+            >
+            <input
+              type="date"
+              class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            />
+          </div>
+          <button
+            type="submit"
+            id="submit-button"
+            class="w-full py-2 bg-purple-600 dark:bg-amber-600 hover:bg-purple-700 dark:hover:bg-amber-700 text-white rounded-lg transition-colors"
+          >
+            Enviar
+          </button>
+        </form>
+        <!-- Mapa -->
+        <div
+          class="md:flex-1 mt-8 md:mt-0 rounded-lg overflow-hidden shadow-lg"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.0000000000005!2d-77.04200000000001!3d-12.046000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8f1a0000001%3A0x0000000000000000!2sLima!5e0!3m2!1ses!2spe!4v0000000000000"
+            width="100%"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-gray-800 dark:bg-gray-900 text-gray-200 dark:text-gray-400 py-8 transition-colors"
+    >
+      <div class="container mx-auto px-4 text-center space-y-4">
+        <p>📍 Av. Melodía 123, Lima, Perú</p>
+        <p>✉️ contacto@notaperfecta.pe | 📞 +51 987 654 321</p>
+        <div class="flex justify-center space-x-6 text-2xl">
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </div>
+        <p class="text-sm">
+          &copy; 2025 Nota Perfecta. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("submit-button")
+        .addEventListener("click", function (e) {
+          e.preventDefault(); // Evita el envío del formulario si es necesario
+          alert("✅ ¡Mensaje enviado exitosamente!");
+        });
+    </script>
+  </body>
+</html>

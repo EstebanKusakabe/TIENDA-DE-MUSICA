@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuela de Música Nota Perfecta</title>
+    <!-- Tailwind CSS with dark mode enabled -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                600: "#7e22ce",
+                700: "#6b21a8",
+                800: "#581c87",
+              },
+              amber: {
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Font Awesome para redes sociales -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans"
+  >
+    <!-- Navbar -->
+    <nav class="bg-purple-600 dark:bg-purple-800 fixed w-full z-10 shadow">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/index.html" class="text-white text-2xl font-bold"
+          >Nota Perfecta</a
+        >
+        <ul class="flex space-x-6">
+          <li>
+            <a
+              href="/index.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/cursos.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Cursos</a
+            >
+          </li>
+          <li>
+            <a
+              href="/nosotros.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contacto.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="/inscripción.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inscripción</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="pt-24 pb-16 px-4 max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">
+        Resumen de inscripción
+      </h2>
+
+      <!-- Carrito -->
+      <div id="checkout-items" class="space-y-2"></div>
+      <p class="text-xl text-center mt-4">
+        Total: $<span id="checkout-total">0</span>
+      </p>
+
+      <!-- Formulario de compra -->
+      <form
+        id="checkout-form"
+        class="mt-8 space-y-4 bg-white dark:bg-gray-700 p-6 rounded-lg shadow"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            id="nombre"
+            placeholder="Nombre"
+            class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+            required
+          />
+          <input
+            id="apellido"
+            placeholder="Apellido"
+            class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+            required
+          />
+        </div>
+        <input
+          id="correo"
+          type="email"
+          placeholder="Correo electrónico"
+          class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+          required
+        />
+        <input
+          id="tarjeta"
+          placeholder="Número de tarjeta"
+          class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+          required
+        />
+        <div class="grid grid-cols-2 gap-4">
+          <input
+            id="fecha"
+            placeholder="MM/AA"
+            class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+            required
+          />
+          <input
+            id="cvv"
+            placeholder="CVV"
+            class="w-full p-2 rounded dark:bg-gray-600 dark:text-white"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 bg-purple-600 dark:bg-amber-600 hover:bg-purple-700 dark:hover:bg-amber-700 text-white rounded-lg text-lg transition-colors"
+        >
+          Finalizar compra
+        </button>
+      </form>
+
+      <!-- Resumen -->
+      <div
+        id="resumen-compra"
+        class="mt-10 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 p-6 rounded-lg shadow hidden"
+      >
+        <h3 class="text-2xl font-bold mb-4">Compra exitosa</h3>
+        <p><strong>Nombre:</strong> <span id="resumen-nombre"></span></p>
+        <p><strong>Correo:</strong> <span id="resumen-correo"></span></p>
+        <p><strong>Total pagado:</strong> $<span id="resumen-total"></span></p>
+        <p class="mt-4 font-semibold">Cursos inscritos:</p>
+        <ul id="resumen-cursos" class="list-disc list-inside"></ul>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-800 dark:bg-gray-900 text-gray-200 dark:text-gray-400 py-8"
+    >
+      <div class="container mx-auto px-4 text-center space-y-4">
+        <p>📍 Av. Melodía 123, Lima, Perú</p>
+        <p>✉️ contacto@notaperfecta.pe | 📞 +51 987 654 321</p>
+        <div class="flex justify-center space-x-6 text-2xl">
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </div>
+        <p class="text-sm">
+          &copy; 2025 Nota Perfecta. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      let cart = JSON.parse(localStorage.getItem("np_cart") || "[]");
+
+      function renderCheckoutCart() {
+        const container = document.getElementById("checkout-items");
+        container.innerHTML = "";
+        let total = 0;
+
+        if (cart.length === 0) {
+          container.innerHTML = "<p>No hay cursos en el carrito.</p>";
+          return;
+        }
+
+        cart.forEach((item) => {
+          total += item.price;
+          const row = document.createElement("div");
+          row.className =
+            "flex justify-between items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow mb-2";
+          row.innerHTML = `
+            <div>${item.course}</div>
+            <div>$${item.price}</div>
+          `;
+          container.appendChild(row);
+        });
+
+        document.getElementById("checkout-total").textContent = total;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCheckoutCart();
+
+        document
+          .getElementById("checkout-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellido = document.getElementById("apellido").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const tarjeta = document.getElementById("tarjeta").value.trim();
+            const fecha = document.getElementById("fecha").value.trim();
+            const cvv = document.getElementById("cvv").value.trim();
+
+            if (!nombre || !apellido || !correo || !tarjeta || !fecha || !cvv) {
+              alert("Por favor, completa todos los campos.");
+              return;
+            }
+
+            alert("✅ ¡Compra exitosa! Gracias por inscribirte.");
+
+            // Mostrar resumen
+            document.getElementById(
+              "resumen-nombre"
+            ).textContent = `${nombre} ${apellido}`;
+            document.getElementById("resumen-correo").textContent = correo;
+            document.getElementById("resumen-total").textContent = cart.reduce(
+              (acc, item) => acc + item.price,
+              0
+            );
+
+            const lista = document.getElementById("resumen-cursos");
+            lista.innerHTML = "";
+            cart.forEach((item) => {
+              const li = document.createElement("li");
+              li.textContent = item.course;
+              lista.appendChild(li);
+            });
+
+            document
+              .getElementById("resumen-compra")
+              .classList.remove("hidden");
+
+            // Limpiar
+            localStorage.removeItem("np_cart");
+            cart = [];
+            renderCheckoutCart();
+            this.reset();
+          });
+      });
+    </script>
+  </body>
+</html>

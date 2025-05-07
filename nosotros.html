@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuela de Música Nota Perfecta</title>
+    <!-- Tailwind CSS with dark mode enabled -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                600: "#7e22ce",
+                700: "#6b21a8",
+                800: "#581c87",
+              },
+              amber: {
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Font Awesome para redes sociales -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200"
+  >
+    <!-- Navbar -->
+    <nav class="bg-purple-600 dark:bg-purple-800 fixed w-full z-10 shadow">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/index.html" class="text-white text-2xl font-bold"
+          >Nota Perfecta</a
+        >
+        <ul class="flex space-x-6">
+          <li>
+            <a
+              href="/index.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/cursos.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Cursos</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="/nosotros.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contacto.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="/inscripción.html"
+              class="text-white hover:text-amber-300 dark:hover:text-amber-500 transition"
+              >Inscripción</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Nosotros -->
+    <section
+      id="nosotros"
+      class="py-16 bg-purple-50 dark:bg-gray-700 transition-colors"
+    >
+      <div
+        class="container mx-auto px-4 space-y-8 text-gray-700 dark:text-gray-200"
+      >
+        <h2 class="text-3xl font-bold text-center">Sobre Nosotros</h2>
+        <div class="space-y-6 max-w-3xl mx-auto">
+          <div>
+            <h3 class="font-semibold text-xl">Nuestra Historia</h3>
+            <p>
+              La Escuela de Música Nota Perfecta fue fundada en 2010 con la
+              visión de ofrecer formación musical accesible y de alta calidad.
+              Con más de 10 años de experiencia, hemos formado a cientos de
+              músicos apasionados.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">Misión</h3>
+            <p>Formar músicos íntegros desde la pasión.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">Visión</h3>
+            <p>Ser la institución líder en formación musical del país.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">Organigrama</h3>
+            <img
+              src="/img/organigrama.jpg"
+              alt="Organigrama"
+              class="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-gray-800 dark:bg-gray-900 text-gray-200 dark:text-gray-400 py-8 transition-colors"
+    >
+      <div class="container mx-auto px-4 text-center space-y-4">
+        <p>📍 Av. Melodía 123, Lima, Perú</p>
+        <p>✉️ contacto@notaperfecta.pe | 📞 +51 987 654 321</p>
+        <div class="flex justify-center space-x-6 text-2xl">
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="#" class="hover:text-amber-400 dark:hover:text-amber-500"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </div>
+        <p class="text-sm">
+          &copy; 2025 Nota Perfecta. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Theme toggle
+      function updateThemeIcon() {
+        const btnIcon = document.querySelector("#theme-toggle i");
+        btnIcon.dataset.feather = document.documentElement.classList.contains(
+          "dark"
+        )
+          ? "sun"
+          : "moon";
+        feather.replace();
+      }
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+        updateThemeIcon();
+      }
+      // Cart functionality
+      let cart = JSON.parse(localStorage.getItem("np_cart") || "[]");
+      function addToCart(course, price) {
+        cart.push({ course, price });
+        localStorage.setItem("np_cart", JSON.stringify(cart));
+        renderCart();
+      }
+      function removeFromCart(idx) {
+        cart.splice(idx, 1);
+        localStorage.setItem("np_cart", JSON.stringify(cart));
+        renderCart();
+      }
+      function renderCart() {
+        const container = document.getElementById("cart-items");
+        container.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, idx) => {
+          total += item.price;
+          const row = document.createElement("div");
+          row.className =
+            "flex justify-between items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow transition-colors";
+          row.innerHTML = `
+              <div>${item.course}</div>
+              <div class="flex items-center space-x-4">
+                <span>$${item.price}</span>
+                <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700">
+                  <i data-feather="trash-2"></i>
+                </button>
+              </div>`;
+          container.appendChild(row);
+        });
+        document.getElementById("cart-total").textContent = total;
+        feather.replace();
+      }
+      function checkout() {
+        alert("Redirigiendo a pasarela de pago...");
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem("theme") === "dark")
+          document.documentElement.classList.add("dark");
+        updateThemeIcon();
+        renderCart();
+      });
+    </script>
+  </body>
+</html>
